@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Centro de Educación Alternativa "Sor Hiltrude San Ignacio"</title>
+  <meta name="description" content="Sitio web educativo, interactivo y accesible para el Centro de Educación Alternativa Sor Hiltrude San Ignacio." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{
+      --accent:#f43f5e; /* rosa/rojo */
+      --accent-2:#9ca3af; /* gris claro */
+      --bg: #374151; /* plomo oscuro */
+    }
+    body{background:var(--bg); color:#f3f4f6;}
+    .glass{backdrop-filter: blur(6px); background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));}
+    .blob{position:absolute; width:380px; height:380px; filter: blur(60px); opacity:0.7; z-index:-1; border-radius:50%; animation:float 8s ease-in-out infinite;}
+    .blob--a{background: radial-gradient(circle at 30% 30%, rgba(244,63,94,0.45), rgba(244,63,94,0.12)); top:-80px; left:-60px}
+    .blob--b{background: radial-gradient(circle at 70% 70%, rgba(156,163,175,0.45), rgba(156,163,175,0.08)); bottom:-120px; right:-80px; animation-duration:10s}
+    @keyframes float{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(-30px) rotate(12deg)}100%{transform:translateY(0) rotate(0)}}
+    .reveal{opacity:0; transform:translateY(18px) scale(.995); transition: all 600ms cubic-bezier(.2,.9,.3,1)}
+    .reveal.show{opacity:1; transform:translateY(0) scale(1)}
+    .card-tilt{transition: transform .25s ease, box-shadow .25s ease}
+    .skip{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip:focus{position:static; width:auto; height:auto; background:#fff; color:#000; padding:.5rem; border-radius:.375rem}
+  </style>
+</head>
+<body class="antialiased font-sans">
+  <a href="#main" class="skip">Saltar al contenido</a>
+  <div class="blob blob--a"></div>
+  <div class="blob blob--b"></div>
+
+  <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[92%] md:w-11/12 lg:w-4/5 z-40">
+    <nav class="glass flex items-center justify-between p-3 rounded-2xl shadow-2xl border border-white/5">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br from-white/10 to-white/3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="url(#g)" stroke-width="1.2">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f43f5e"/><stop offset="1" stop-color="#9ca3af"/></linearGradient>
+            </defs>
+            <rect x="3" y="3" width="18" height="18" rx="3"/>
+            <path d="M8 14s1-2 4-2 4 2 4 2"/>
+            <path d="M8 10s1-2 4-2 4 2 4 2"/>
+          </svg>
+        </div>
+        <div>
+          <a href="#main" class="text-lg font-bold">Centro de Educación Alternativa "Sor Hiltrude San Ignacio"</a>
+          <div class="text-xs opacity-70">Formando líderes con valores, excelencia académica y ciencia, tecnología al servicio de la comunidad</div>
+        </div>
+      </div>
+
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#inicio" class="px-3 py-2 rounded-lg hover:bg-white/5">Inicio</a>
+        <a href="#nosotros" class="px-3 py-2 rounded-lg hover:bg-white/5">Nosotros</a>
+        <a href="#oferta" class="px-3 py-2 rounded-lg hover:bg-white/5">Oferta</a>
+        <a href="#contacto" class="px-3 py-2 rounded-lg bg-gradient-to-r from-[color:var(--accent)] to-[color:var(--accent-2)] text-black font-semibold">Contacto</a>
+      </div>
+
+      <div class="md:hidden">
+        <button id="btnMenu" aria-expanded="false" aria-controls="mobileMenu" class="p-2 rounded-lg glass">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" class="mt-2 hidden glass p-3 rounded-xl border border-white/5">
+      <a href="#inicio" class="block py-2">Inicio</a>
+      <a href="#nosotros" class="block py-2">Nosotros</a>
+      <a href="#oferta" class="block py-2">Oferta</a>
+      <a href="#contacto" class="block py-2 font-semibold">Contacto</a>
+    </div>
+  </header>
+
+  <main id="main" class="min-h-screen pt-28 px-6 md:px-12 lg:px-24">
+    <section id="inicio" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="reveal" data-delay="100">
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Bienvenidos al <span style="color:var(--accent);">Centro de Educación Alternativa</span></h1>
+        <p class="mt-4 text-lg opacity-80">Formando líderes con valores, excelencia académica y ciencia, tecnología al servicio de la comunidad.</p>
+      </div>
+      <div class="relative p-6">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="estudiantes aprendiendo" class="rounded-2xl shadow-xl object-cover w-full h-80" />
+      </div>
+    </section>
+
+    <section id="nosotros" class="mt-12">
+      <h2 class="text-2xl font-bold">Nosotros</h2>
+      <p class="mt-2 opacity-80">Somos un centro de educación alternativa dedicado a brindar oportunidades educativas inclusivas para jóvenes y adultos, integrando tecnología, ciencia y valores comunitarios.</p>
+    </section>
+
+    <section id="oferta" class="mt-12">
+      <h2 class="text-2xl font-bold">Nuestra oferta educativa</h2>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card-tilt p-4 rounded-2xl glass hover:shadow-lg reveal" data-delay="200">
+          <h3 class="font-semibold">Área Comercial</h3>
+          <p class="mt-2 text-sm opacity-80">Formación en administración, contabilidad y gestión empresarial.</p>
+        </div>
+        <div class="card-tilt p-4 rounded-2xl glass hover:shadow-lg reveal" data-delay="300">
+          <h3 class="font-semibold">Área Industrial</h3>
+          <p class="mt-2 text-sm opacity-80">Capacitación en oficios técnicos para el desarrollo productivo.</p>
+        </div>
+        <div class="card-tilt p-4 rounded-2xl glass hover:shadow-lg reveal" data-delay="400">
+          <h3 class="font-semibold">Primaria de jóvenes y adultos</h3>
+          <p class="mt-2 text-sm opacity-80">Oportunidad de concluir sus estudios primarios con apoyo personalizado.</p>
+        </div>
+        <div class="card-tilt p-4 rounded-2xl glass hover:shadow-lg reveal" data-delay="500">
+          <h3 class="font-semibold">Área de Servicio</h3>
+          <p class="mt-2 text-sm opacity-80">Especialidades en tecnología, turismo y atención comunitaria.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="mt-12 mb-24">
+      <h2 class="text-2xl font-bold">Contacto</h2>
+      <p class="mt-2 opacity-80">Escríbenos para información, inscripciones o visitas guiadas.</p>
+      <form id="contactForm" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 glass p-6 rounded-2xl" novalidate>
+        <label class="flex flex-col">
+          <span class="text-sm opacity-70">Nombre</span>
+          <input required name="name" class="mt-2 p-3 rounded-lg bg-transparent border border-white/6" />
+        </label>
+        <label class="flex flex-col">
+          <span class="text-sm opacity-70">Correo</span>
+          <input required name="email" type="email" class="mt-2 p-3 rounded-lg bg-transparent border border-white/6" />
+        </label>
+        <label class="col-span-1 md:col-span-2 flex flex-col">
+          <span class="text-sm opacity-70">Mensaje</span>
+          <textarea required name="message" rows="4" class="mt-2 p-3 rounded-lg bg-transparent border border-white/6"></textarea>
+        </label>
+        <div class="col-span-1 md:col-span-2 flex items-center gap-3">
+          <button type="submit" class="px-4 py-2 rounded-lg bg-[color:var(--accent)] text-black font-semibold">Enviar</button>
+          <div id="status" class="text-sm opacity-80"></div>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="p-6 mt-8 text-center opacity-80">
+    © Centro de Educación Alternativa "Sor Hiltrude San Ignacio" — Diseño interactivo · 2025
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const reveals = document.querySelectorAll('.reveal');
+      const obs = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); obs.unobserve(e.target); } }); }, {threshold:0.12});
+      reveals.forEach((r,i)=>{ r.style.transitionDelay = (r.dataset.delay||0)+'ms'; obs.observe(r); });
+
+      const btn = document.getElementById('btnMenu');
+      const mobile = document.getElementById('mobileMenu');
+      btn?.addEventListener('click', ()=>{ const open = mobile.classList.toggle('hidden'); btn.setAttribute('aria-expanded', String(!open)); });
+
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('status');
+      form.addEventListener('submit',(e)=>{
+        e.preventDefault();
+        const data = new FormData(form);
+        const msg = {name: data.get('name'), email: data.get('email'), message: data.get('message'), date:new Date().toISOString()};
+        const messages = JSON.parse(localStorage.getItem('messages')||'[]');
+        messages.push(msg); localStorage.setItem('messages', JSON.stringify(messages));
+        status.textContent = '¡Mensaje guardado! Nos pondremos en contacto.'; form.reset(); setTimeout(()=> status.textContent = '', 4000);
+      });
+    });
+  </script>
+</body>
+</html>
